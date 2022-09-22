@@ -4,7 +4,8 @@ import Table from 'react-bootstrap/Table';
 import { useState, useEffect, useMemo } from "react";
 
 function App() {
-  const URL = process.env.REACT_APP_URL
+  // const URL = process.env.REACT_APP_URL
+  const URL = 'https://k87fqy6frh.execute-api.us-east-1.amazonaws.com/prod/get-data'
   console.log(URL)
   const [data, setData] = useState({
     'trade-matching-in-trade-table': 0,
@@ -85,23 +86,23 @@ function App() {
             </div>
             <div className='row justify-content-center'>
               <div className='col-2 h5 main-box'>
-                Settled: {data["trade-settled"]}
+                Settled: {data["trade-settled"]? data["trade-settled"] : 0}
               </div>
               <div className='col-2 h5 main-box'>
-                Matched: {data["trade-matched"]}
+                Matched: {data["trade-matched"]? data["trade-matched"] : 0}
               </div>
             </div>
             <div className='row justify-content-center'>
               <div className='col-2 h5 main-box'>
-                Unmatched: {data["trade-unmatched"]}
+                Unmatched: {data["trade-unmatched"]? data["trade-unmatched"] : 0 }
               </div>
               <div className='col-2 h5 main-box'>
-                Mismatched: {data["trade-mismatched"]}
+                Mismatched: {data["trade-mismatched"]? data["trade-mismatched"] : 0}
               </div>
             </div>
             <div className='row justify-content-center'>
               <div className='col-4 h5 main-box'>
-                Total: {data["trade-total"]}
+                Total: {data["trade-total"]? data["trade-total"] : 0}
               </div>
             </div>
             <div className='row justify-content-center'>
@@ -164,18 +165,18 @@ function App() {
             </div>
             <div className='row justify-content-center'>
               <div className='col-2 h5 main-box'>
-                Total: {data["settlement-total"]}
+                Total: {data["settlement-total"]? data["settlement-total"] : 0 }
               </div>
               <div className='col-2 h5 main-box'>
-                Matched: {data["settlement-matched"]}
+                Matched: {data["settlement-matched"]? data["settlement-matched"] : 0}
               </div>
             </div>
             <div className='row justify-content-center'>
               <div className='col-2 h5 main-box'>
-                Unmatched: {data["settlement-unmatched"]}
+                Unmatched: {data["settlement-unmatched"]? data["settlement-unmatched"] : 0}
               </div>
               <div className='col-2 h5 main-box'>
-                Mismatched: {data["settlement-mismatched"]}
+                Mismatched: {data["settlement-mismatched"]? data["settlement-mismatched"] : 0}
               </div>
             </div>
             <div className='row justify-content-center'>
